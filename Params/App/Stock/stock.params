@@ -1,0 +1,124 @@
+# Copyright 2006 by Sean Luke and George Mason University
+# Licensed under the Academic Free License version 3.0
+# See the file "LICENSE" for more information
+
+parent.0 = ../../gp/koza/koza.params
+
+# Using the seed -562410441 we should find ideal individual (89 hits) in gen 246 (out of 250)
+seed.0 = -562410441
+
+# Stolen from koza/params -- overwriting just
+# a little for readability
+# You need to create at least one function set, 
+# called "f0", which your first tree will use.  
+
+gp.fs.size = 1
+gp.fs.0.name = f0
+
+### The functions, carefully ordered :-)  (See below)
+
+gp.fs.0.func.0 = ec.app.stock.func.Buy
+gp.fs.0.func.0.nc = nc1
+gp.fs.0.func.1 = ec.app.stock.func.And
+gp.fs.0.func.1.nc = nc2
+gp.fs.0.func.2 = ec.app.stock.func.Or
+gp.fs.0.func.2.nc = nc2
+gp.fs.0.func.3 = ec.app.stock.func.Lt
+gp.fs.0.func.3.nc = nc2
+gp.fs.0.func.4 = ec.app.stock.func.Gt
+gp.fs.0.func.4.nc = nc2
+gp.fs.0.func.5 = ec.app.stock.func.Close
+gp.fs.0.func.5.nc = nc0
+gp.fs.0.func.6 = ec.app.stock.func.High
+gp.fs.0.func.6.nc = nc0
+gp.fs.0.func.7 = ec.app.stock.func.Low
+gp.fs.0.func.7.nc = nc0
+gp.fs.0.func.8 = ec.app.stock.func.Close
+gp.fs.0.func.8.nc = nc0
+gp.fs.0.func.9 = ec.app.stock.func.Stema
+gp.fs.0.func.9.nc = nc0
+gp.fs.0.func.10 = ec.app.stock.func.Mtema
+gp.fs.0.func.10.nc = nc0
+gp.fs.0.func.11 = ec.app.stock.func.Ltema
+gp.fs.0.func.11.nc = nc0
+gp.fs.0.func.12 = ec.app.stock.func.Sell
+gp.fs.0.func.12.nc = nc1
+gp.fs.0.func.13 = ec.app.stock.func.Short
+gp.fs.0.func.13.nc = nc1
+gp.fs.0.func.14 = ec.app.stock.func.Cover
+gp.fs.0.func.14.nc = nc1
+gp.fs.0.func.15 = ec.app.stock.func.Traderule
+gp.fs.0.func.15.nc = nc4
+gp.fs.0.func.16 = ec.app.stock.func.Atrlow
+gp.fs.0.func.16.nc = nc0
+gp.fs.0.func.17 = ec.app.stock.func.Atrmid
+gp.fs.0.func.17.nc = nc0
+gp.fs.0.func.18 = ec.app.stock.func.Atrhigh
+gp.fs.0.func.18.nc = nc0
+gp.fs.0.func.19 = ec.app.stock.func.Adxlow
+gp.fs.0.func.19.nc = nc0
+gp.fs.0.func.20 = ec.app.stock.func.Adxmid
+gp.fs.0.func.20.nc = nc0
+gp.fs.0.func.21 = ec.app.stock.func.Adxhigh
+gp.fs.0.func.21.nc = nc0
+
+gp.fs.0.func.22 = ec.app.stock.func.Pdimdilow
+gp.fs.0.func.22.nc = nc0
+gp.fs.0.func.23 = ec.app.stock.func.Pdimdimid
+gp.fs.0.func.23.nc = nc0
+gp.fs.0.func.24 = ec.app.stock.func.Pdimdihigh
+gp.fs.0.func.24.nc = nc0
+
+gp.fs.0.func.25 = ec.app.stock.func.Ccilow
+gp.fs.0.func.25.nc = nc0
+gp.fs.0.func.26 = ec.app.stock.func.Ccihigh
+gp.fs.0.func.26.nc = nc0
+
+gp.fs.0.func.27 = ec.app.stock.func.Tsf
+gp.fs.0.func.27.nc = nc0
+
+gp.fs.0.func.28 = ec.app.stock.func.Cross
+gp.fs.0.func.28.nc = nc2
+
+gp.fs.0.func.29 = ec.app.stock.func.Gapup
+gp.fs.0.func.29.nc = nc0
+gp.fs.0.func.30 = ec.app.stock.func.Gapdown
+gp.fs.0.func.30.nc = nc0
+gp.fs.0.func.31 = ec.app.stock.func.Inside
+gp.fs.0.func.31.nc = nc0
+gp.fs.0.func.32 = ec.app.stock.func.Outside
+gp.fs.0.func.32.nc = nc0
+
+gp.fs.0.func.33 = ec.app.stock.func.Accdistup
+gp.fs.0.func.33.nc = nc0
+gp.fs.0.func.34 = ec.app.stock.func.Accdistdown
+gp.fs.0.func.34.nc = nc0
+
+gp.fs.0.func.35 = ec.app.stock.func.Macdup
+gp.fs.0.func.35.nc = nc0
+gp.fs.0.func.36 = ec.app.stock.func.Macddown
+gp.fs.0.func.36.nc = nc0
+
+gp.fs.0.func.37 = ec.app.stock.func.Obvtrend
+gp.fs.0.func.37.nc = nc0
+
+gp.fs.0.func.38 = ec.app.stock.func.Obvupalittle
+gp.fs.0.func.38.nc = nc0
+gp.fs.0.func.39 = ec.app.stock.func.Obvupalot
+gp.fs.0.func.39.nc = nc0
+gp.fs.0.func.40 = ec.app.stock.func.Obvdownalittle
+gp.fs.0.func.40.nc = nc0
+gp.fs.0.func.41 = ec.app.stock.func.Obvdownalot
+gp.fs.0.func.41.nc = nc0
+
+
+#
+# We specify our problem here
+#
+
+eval.problem = ec.app.stock.Stock
+eval.problem.data = ec.app.stock.StockData
+
+# Here we determine what kind of Stock problem we're doing:
+
+gp.fs.0.size = 42
